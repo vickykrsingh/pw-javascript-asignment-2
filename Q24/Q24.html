@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Long Words</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+        culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <script>
+        var paragraph = document.getElementById('paragraph');
+        
+        // Split the paragraph into words
+        var words = paragraph.textContent.split(/\s+/);
+
+        // Iterate through the words and highlight those with more than 8 characters
+        for (var i = 0; i < words.length; i++) {
+            if (words[i].length > 8) {
+                // Create a span element for the highlighted word
+                var span = document.createElement('span');
+                span.textContent = words[i];
+                span.classList.add('highlight');
+
+                // Wrap the original word with the span
+                words[i] = span.outerHTML;
+            }
+        }
+
+        // Join the words back into a string and set it as the HTML content of the paragraph
+        paragraph.innerHTML = words.join(' ');
+    </script>
+</body>
+</html>

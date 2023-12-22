@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Progress Bar</title>
+    <style>
+        body {
+            height: 200vh; /* Ensure there is enough content to scroll */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #f0f0f0;
+            z-index: 1000;
+            display: none;
+        }
+        #progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #4caf50;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <h2>Scroll down to see scrolling animination</h2>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Your page content goes here -->
+
+    <script src="./Q22.js">
+       
+    </script>
+</body>
+</html>
